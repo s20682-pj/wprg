@@ -16,7 +16,7 @@ if(isPangram($napis)==true){
 
 function isPangram($napis){
     $alfabet = array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
-    $Pangram = false;
+    $pangram = false;
     $array = str_split($napis);
     foreach ($array as $char) {
             if (ctype_alpha($char)) {
@@ -30,9 +30,9 @@ function isPangram($napis){
             }
     }
 if (!$alfabet) {
-    $Pangram = true;
+    $pangram = true;
 }
-return $Pangram;
+return $pangram;
 }
 ?>
 </body>

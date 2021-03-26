@@ -15,24 +15,24 @@ if(isPangram($napis)==true){
 }
 
 function isPangram($napis){
-    $alphabet = array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
-    $isPangram = false;
+    $alfabet = array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
+    $pangram = false;
     $array = str_split($napis);
     foreach ($array as $char) {
             if (ctype_alpha($char)) {
                     if (ctype_upper($char)) {
                         $char = strtolower($char);
                     }
-            $key = array_search($char, $alphabet);
+            $key = array_search($char, $alfabet);
             if ($key !== false) {
-                unset($alphabet[$key]);
+                unset($alfabet[$key]);
             }
             }
     }
-if (!$alphabet) {
-    $isPangram = true;
+if (!$alfabet) {
+    $pangram = true;
 }
-return $isPangram;
+return $pangram;
 }
 ?>
 </body>

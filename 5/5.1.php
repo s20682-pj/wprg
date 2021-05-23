@@ -30,14 +30,14 @@ if ($result = mysqli_query($db, $query)) {
 }
 
 echo "</br>";
-
-foreach($result as $row2) {
-
-    $idlist[] = array(
-        'id' => $row2['id']
-    );              
+    
+$result = mysqli_query($db,$query);
+while($r=mysqli_fetch_array($result))
+{
+echo $r['id']."<br/>";
 }
-var_dump($idlist);
+
+
 echo "</br>";
 $insert = 'insert into test (id) values (4)';
 if(mysqli_query($db, $insert)){
